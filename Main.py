@@ -1,20 +1,13 @@
-# from itertools import count
+from Methods import enter
+from Methods import prime_factors as prime
+from Methods import list_in_text as txt
+import os
 
+os.system('cls')
 
-def Prime_factors (num):
-    res = []
-    count = 2
-    while count * count <= num:
-        if num % count == 0:
-            res.append(count)
-            num //= count
-        else:
-            count += 1
-    if num > 1:
-        res.append(num)
-    # primes = set(res)
-    return res
+num = enter('Введите число, для которого необходимо найти список простых чисел: ')
 
-number = int(input('Введите натуральное число: '))
-res = Prime_factors(number)
-print(res)
+factors = prime(num)
+
+output = txt(factors)
+print(output)
